@@ -15,6 +15,7 @@ import { QrCodePage } from '../pages/qr-code/qr-code';
 import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
 import { HttpClientModule } from '@angular/common/http';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -53,7 +54,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-
+    SQLite,
     BarcodeScanner,
     Vibration
   ]
