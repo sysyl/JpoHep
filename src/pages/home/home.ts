@@ -5,10 +5,15 @@ import { NavController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+
 export class HomePage {
+  qrData = null;
+  scannedCode = null;
 
-  constructor(public navCtrl: NavController) {
+  constructor() { }
 
+  logout(){
+    
   }
-
 }
