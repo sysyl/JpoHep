@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Campus HEP</ion-title>
+    <ion-title>Créer un compte </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +15,18 @@
 
 
 <ion-content>
-    <ion-col text-center>
 
-  <h1>Créer un compte</h1>
-  </ion-col>
 <form [formGroup]="credentialsForm">
-
+  <ion-item>
+    <ion-label floating>Prénom</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['firstName']"
+        type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Nom</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['lastName']"
+        type="text"></ion-input>
+  </ion-item>
   <ion-item>
     <ion-label floating>Email</ion-label>
     <ion-input [formControl]="credentialsForm.controls['email']"
@@ -38,9 +44,9 @@
           type="password"></ion-input>
     </ion-item>     
     <ion-item>
-        <ion-label floating>Numéro de téléphone</ion-label>
-        <ion-input [formControl]="credentialsForm.controls['phoneNumber']" type="number"></ion-input>
-      </ion-item>     
+  <ion-label floating>Numéro de téléphone</ion-label>
+  <ion-input [formControl]="credentialsForm.controls['phoneNumber']" type="number"></ion-input>
+</ion-item>     
   
 
       <ion-item>
