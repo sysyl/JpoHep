@@ -15,6 +15,8 @@ import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,13 +26,13 @@ import { HttpClientModule } from '@angular/common/http';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
-    PopoverPage
+    PopoverPage,
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
     
   ],
   bootstrap: [IonicApp],
@@ -42,13 +44,15 @@ import { HttpClientModule } from '@angular/common/http';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
-    PopoverPage
+    PopoverPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+
+    BarcodeScanner,
   ]
 })
 export class AppModule {}

@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { QrCodePage } from './qr-code';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
-    QrCodePage,
+    BarcodeScanner,
   ],
   imports: [
-    IonicPageModule.forChild(QrCodePage),
+    IonicPageModule.forChild(BarcodeScanner),
   ],
 })
-export class QrCodePageModule {}
+export class QrCodePageModule {
+
+}
