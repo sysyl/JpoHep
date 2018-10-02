@@ -1,9 +1,9 @@
+import { ApiProvider } from './../../providers/api/api';
 import { HomePage } from './../home/home';
 import { CreateAccountPage } from './../create-account/create-account';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
 /**
  * Generated class for the LoginPage page.
  *
@@ -18,9 +18,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginPage {
   credentialsForm: FormGroup;
+  account : Account;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,private formBuilder: FormBuilder
+  constructor(public navCtrl: NavController, public navParams: NavParams,private formBuilder: FormBuilder,private apiProvider: ApiProvider
     ) {
       this.credentialsForm = this.formBuilder.group({
         email: [''],
@@ -30,14 +30,26 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
 
   onSignIn() {
-    //this.logger.info('SignInPage: onSignIn()');
+
     this.navCtrl.setRoot(HomePage)
+
     console.log(this.credentialsForm.controls['email'].value)
+      this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password']).subscribe(data => {
+        console.log(data)
+        
+        if(data['error']=='ERROR'){
+        }
+        else{
+          this.account = data;
+
+        }
+ 
+      });
+    
     
   }
 

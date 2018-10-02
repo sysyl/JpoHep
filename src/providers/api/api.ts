@@ -1,17 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from "rxjs/Rx";
+import { Account } from './../../interface/Account';
 
-/*
-  Generated class for the ApiProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class ApiProvider {
+  account : Account;
+  private baseUrl: string = "https://home.paulsouille.fr"
+  constructor(
+    private readonly http: HttpClient
+      ) {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ApiProvider Provider');
+  }
+ 
+  login(username,password): Observable<any> {
+      return this.http.get(`${this.baseUrl}`);
   }
 
 }

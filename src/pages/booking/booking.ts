@@ -1,7 +1,7 @@
+import { PopoverPage } from './../popover/popover';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-
+import { IonicPage, NavController, NavParams,PopoverController, Popover } from 'ionic-angular';
+import { FormGroup,FormBuilder,Validator } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -9,8 +9,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'booking.html',
 })
 export class BookingPage {
+  credentialsForm : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private formBuilder : FormBuilder,public popoverCtrl:PopoverController) {
+    
+    this.credentialsForm = this.formBuilder.group({
+      date: [''],
+      time: [''],
+    });
   }
 
   ionViewDidLoad() {
@@ -18,7 +24,9 @@ export class BookingPage {
       
 
   }
-  checkValidation(event){
-
+  setBooking(){
+    console.log(this.credentialsForm.controls['date'].value)
+    console.log(this.credentialsForm.controls['time'].value)
+    
   }
 }

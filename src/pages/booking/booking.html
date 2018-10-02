@@ -8,20 +8,29 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
-  </ion-item>
 
-  <ion-item>
-    <ion-label>Heure</ion-label>
-    <ion-datetime displayFormat="HH" ></ion-datetime>
-  </ion-item>
 
-  <ion-col text-center>
-    <button ion-button block color="secondary" (click)="checkValidation($event)">
-      Valider
-    </button>
-  </ion-col>
+    <form [formGroup]="credentialsForm">
+
+        <ion-item>
+          <ion-label >Date</ion-label>
+          <ion-input required [formControl]="credentialsForm.controls['date']"
+              type="date"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label >Heure</ion-label>
+            <ion-input required [formControl]="credentialsForm.controls['time']"
+                type="time"></ion-input>
+          </ion-item>
+        
+          <button ion-button type="submit" (click)="setBooking()" block>Réserver</button>
+
+      </form>
+
+
+
+
+
 
 </ion-content>

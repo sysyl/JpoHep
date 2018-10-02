@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { BookingPage } from './../pages/booking/booking';
 import { CreateAccountPage } from './../pages/create-account/create-account';
 import { LoginPage } from './../pages/login/login';
@@ -11,6 +12,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QrCodePage } from '../pages/qr-code/qr-code';
 import { ApiProvider } from '../providers/api/api';
+import { PopoverPage } from '../pages/popover/popover';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,12 +24,13 @@ import { ApiProvider } from '../providers/api/api';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
+    PopoverPage
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    
+    HttpClientModule
     
   ],
   bootstrap: [IonicApp],
@@ -37,6 +42,7 @@ import { ApiProvider } from '../providers/api/api';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
