@@ -15,8 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreateAccountPage {
   credentialsForm: FormGroup;
-  masks: any;
-  phoneNumber: any = "";
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private formBuilder: FormBuilder){
     
@@ -25,6 +24,9 @@ export class CreateAccountPage {
     password: [''],
     phoneNumber:[],
     school:[''],
+    firstName:[''],
+    lastName:['']
+
   });
 
 }

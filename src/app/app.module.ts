@@ -10,7 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QrCodePage } from '../pages/qr-code/qr-code';
-
+import { ApiProvider } from '../providers/api/api';
 @NgModule({
   declarations: [
     MyApp,
@@ -20,10 +20,13 @@ import { QrCodePage } from '../pages/qr-code/qr-code';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,7 +41,8 @@ import { QrCodePage } from '../pages/qr-code/qr-code';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 export class AppModule {}

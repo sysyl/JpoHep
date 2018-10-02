@@ -3,7 +3,6 @@ import { CreateAccountPage } from './../create-account/create-account';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { setRootDomAdapter } from '@angular/platform-browser/src/dom/dom_adapter';
 
 /**
  * Generated class for the LoginPage page.
@@ -25,7 +24,8 @@ export class LoginPage {
     ) {
       this.credentialsForm = this.formBuilder.group({
         email: [''],
-        password: ['']
+        password: [''],
+      
       });
   }
 

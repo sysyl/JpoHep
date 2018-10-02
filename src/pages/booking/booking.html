@@ -8,5 +8,20 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Heure</ion-label>
+    <ion-datetime displayFormat="HH" ></ion-datetime>
+  </ion-item>
+
+  <ion-col text-center>
+    <button ion-button block color="secondary" (click)="checkValidation($event)">
+      Valider
+    </button>
+  </ion-col>
 
 </ion-content>
