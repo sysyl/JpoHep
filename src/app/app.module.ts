@@ -1,3 +1,4 @@
+import { Vibration } from '@ionic-native/vibration';
 import { HttpClient } from '@angular/common/http';
 import { BookingPage } from './../pages/booking/booking';
 import { CreateAccountPage } from './../pages/create-account/create-account';
@@ -45,6 +46,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
+
   ],
   providers: [
     StatusBar,
@@ -53,6 +55,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     ApiProvider,
 
     BarcodeScanner,
+    Vibration
   ]
 })
 export class AppModule {}
