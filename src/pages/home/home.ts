@@ -12,9 +12,15 @@ export class HomePage {
   qrData = null;
   scannedCode = null;
 
-  constructor() { }
+  constructor(private barcodeScanner: BarcodeScanner) { }
 
-  logout(){
-    
+  scanCode() {
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.scannedCode = barcodeData.text;
+    }, (err) => {
+        console.log('Error: ', err);
+    });
   }
+
+
 }
