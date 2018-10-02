@@ -10,8 +10,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QrCodePage } from '../pages/qr-code/qr-code';
+import { Vibration } from '@ionic-native/vibration';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BarcodeScanner
+    BarcodeScanner,
+    Vibration,
+    SQLite
   ]
 })
 export class AppModule {}

@@ -26,17 +26,23 @@ export class QrCodePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Qr  CodePage');
-  }
-    qrData = null;
-    scannedCode = null;
 
-    scanCode() {
-      this.barcodeScanner.scan().then(barcodeData => {
-        this.scannedCode = barcodeData.text;
-        this.vibration.vibrate([1000,200,1000]);
-      }, (err) => {
-          console.log('Error: ', err);
-      });
-    }
+  }
+
+
+  qrData = null;
+  scannedCode = null;
+
+  scanCode() {
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.scannedCode = barcodeData.text;
+      this.vibration.vibrate([1000,200,1000]);
+    }, (err) => {
+        console.log('Error: ', err);
+    });
+  }
+
+
+
 
 }
