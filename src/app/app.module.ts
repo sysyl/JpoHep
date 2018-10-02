@@ -1,3 +1,4 @@
+import { BookingPage } from './../pages/booking/booking';
 import { CreateAccountPage } from './../pages/create-account/create-account';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { QrCodePage } from '../pages/qr-code/qr-code';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     LoginPage,
     CreateAccountPage,
+    BookingPage,
+    QrCodePage,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     LoginPage,
     CreateAccountPage,
+    BookingPage,
+    QrCodePage,
   ],
   providers: [
     StatusBar,
