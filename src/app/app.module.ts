@@ -28,13 +28,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-    
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
