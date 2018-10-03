@@ -1,3 +1,4 @@
+import { RoomPage } from './../pages/room/room';
 import { HTTP } from '@ionic-native/http';
 import { Vibration } from '@ionic-native/vibration';
 import { HttpClient } from '@angular/common/http';
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {AlertController} from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +30,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
-    PopoverPage
+    PopoverPage,
+    RoomPage
     
   ],
   imports: [
@@ -47,6 +50,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
+    RoomPage
 
   ],
   providers: [

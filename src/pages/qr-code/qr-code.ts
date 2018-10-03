@@ -1,7 +1,10 @@
+import { RoomPage } from './../room/room';
+import { CreateAccountPage } from './../create-account/create-account';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HTTP } from '@ionic-native/http';
+import { ApiProvider } from '../../providers/api/api';
 
 /**
  * Generated class for the QrCodePage page.
@@ -16,29 +19,38 @@ import { HTTP } from '@ionic-native/http';
   templateUrl: 'qr-code.html',
 })
 export class QrCodePage {
+  room :any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner,
+  constructor(public navCtrl: NavController,private alertCtrl:AlertController,private apiProvider:ApiProvider, public navParams: NavParams, private barcodeScanner: BarcodeScanner,
               private http: HTTP) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Qr  CodePage');
+    //this.navCtrl.push(RoomPage,{room:1});
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.navCtrl.push(RoomPage,{room:barcodeData.text});
+      //this.scannedCode = barcodeData.text;
+
+    }, (err) => {
+      console.log('Error: ', err);
+      });
+
   }
 
-
+  setAlert(titleAlert,contentAlert){
+    let alert = this.alertCtrl.create({
+      title: titleAlert,
+      subTitle: contentAlert,
+      buttons: ['Fermer']
+    });
+    alert.present();
+  }
   qrData = null;
   scannedCode = null;
-  // Le code est scanné, nous avons donc un id du crCode, le but est de retourner les infos recherchés
   scanCode() {
+    //this.navCtrl.push(RoomPage,{room:1});
     this.barcodeScanner.scan().then(barcodeData => {
-      this.scannedCode = barcodeData.text
-
-      this.http.get('http://localhost:3000/rooms/'+this.scannedCode, {}, {})
-        .then(data => {
-          console.log(data.data); // data received by server
-        })
-        .catch(error => {
-          console.log(error.error); // error message as string
-        });
+      this.navCtrl.push(RoomPage,{room:barcodeData.text});
+      //this.scannedCode = barcodeData.text;
 
     }, (err) => {
       console.log('Error: ', err);

@@ -24,11 +24,12 @@ export class ApiProvider {
   createAccount(email,password,phoneNumber,school,firstName,lastName):Observable<any>{
     var urlApi = this.baseUrl+'/createAccount?email='+email+'&password='+password+'&phoneNumber='+phoneNumber+'&school='+school+'&firstName='+firstName+'&lastName='+lastName
     console.log(urlApi)
-        
-
     return this.http.get(`${urlApi}`);
+  }
 
-
+  getRoomById(roomId):Observable<any>{
+    var urlApi = this.baseUrl+'/rooms/'+roomId;
+    return this.http.get(`${urlApi}`);
   }
 
 }
