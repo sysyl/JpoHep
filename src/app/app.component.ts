@@ -26,9 +26,7 @@ export class MyApp {
       { title: 'Accueil', component: HomePage },
       { title: 'Scanner un code', component: QrCodePage },
       {title:'Réserver',component : BookingPage}
-        
     ];
-
   }
 
   initializeApp() {

@@ -14,11 +14,9 @@
 
 </ion-header>
 
-<ion-content>
-    <ion-col text-center>
+<ion-content text-center>
+<img src="assets/imgs/photoJPO.png" width="1000">
 
-  <h1>Connexion</h1>
-  </ion-col>
 <form [formGroup]="credentialsForm">
 
   <ion-item>
@@ -35,7 +33,7 @@
 
   <ion-row>
     <ion-col text-center>
-      <button ion-button block color="secondary" (click)="onSignIn()">
+      <button ion-button block color="button" (click)="onSignIn()">
         Connexion
       </button>
     </ion-col>
