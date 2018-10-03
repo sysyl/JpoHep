@@ -18,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -54,16 +53,10 @@ import { SQLite } from '@ionic-native/sqlite';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-<<<<<<< HEAD
-    BarcodeScanner,
-    Vibration,
-    SQLite
-=======
     ApiProvider,
     SQLite,
     BarcodeScanner,
     Vibration
->>>>>>> 7aab2b1296bda554b676a8bb34e33f01f77312e2
   ]
 })
 export class AppModule {}
