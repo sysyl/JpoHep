@@ -16,6 +16,7 @@ import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { HTTP } from '@ionic-native/http';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -56,7 +57,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     ApiProvider,
     SQLite,
     BarcodeScanner,
-    Vibration
+    Vibration,
+    HTTP,
   ]
 })
 export class AppModule {}
