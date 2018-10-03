@@ -7,15 +7,28 @@ import { Account } from './../../interface/Account';
 @Injectable()
 export class ApiProvider {
   account : Account;
-  private baseUrl: string = "https://home.paulsouille.fr"
+  private baseUrl: string = "http://home.paulsouille.fr:3000"
   constructor(
     private readonly http: HttpClient
       ) {
 
   }
  
-  login(username,password): Observable<any> {
-      return this.http.get(`${this.baseUrl}`);
+  login(email,password): Observable<any> {
+      var urlApi = this.baseUrl+'/login?email='+email+'&password='+password
+      console.log(urlApi)
+      
+      return this.http.get(`${urlApi}`);
+  }
+
+  createAccount(email,password,phoneNumber,school,firstName,lastName):Observable<any>{
+    var urlApi = this.baseUrl+'/createAccount?email='+email+'&password='+password+'&phoneNumber='+phoneNumber+'&school='+school+'&firstName='+firstName+'&lastName='+lastName
+    console.log(urlApi)
+        
+
+    return this.http.get(`${urlApi}`);
+
+
   }
 
 }
