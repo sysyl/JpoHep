@@ -41,9 +41,6 @@ export class LoginPage {
     alert.present();
   }
   onSignIn() {
-
-    //this.navCtrl.setRoot(HomePage)
-
     console.log(this.credentialsForm.controls['email'].value)
       this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password'].value).subscribe(data => {
         console.log(data)
@@ -67,7 +64,6 @@ export class LoginPage {
 
   onCreateAccount() {
     this.navCtrl.push(CreateAccountPage)
-    //this.logger.info('SignInPage: onForgotPassword()');
   }
 
 }

@@ -19,39 +19,39 @@
 <form [formGroup]="credentialsForm">
   <ion-item>
     <ion-label floating>Prénom</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['firstName']"
+    <ion-input [formControl]="credentialsForm.controls['firstName']" value="paul"
         type="text"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label floating>Nom</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['lastName']"
+    <ion-input [formControl]="credentialsForm.controls['lastName']"value="paul"
         type="text"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label floating>Email</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['email']"
+    <ion-input [formControl]="credentialsForm.controls['email']"value="paul"
         type="email"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label floating>Mot de passe</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['password']"
+    <ion-input [formControl]="credentialsForm.controls['password']"value="paul"
         type="password"></ion-input>
   </ion-item>      
   <ion-item>
       <ion-label floating>Confirmez le mot de passe</ion-label>
-      <ion-input [formControl]="credentialsForm.controls['password']"
+      <ion-input [formControl]="credentialsForm.controls['passwordVerif']"value="paul"
           type="password"></ion-input>
     </ion-item>     
     <ion-item>
   <ion-label floating>Numéro de téléphone</ion-label>
-  <ion-input [formControl]="credentialsForm.controls['phoneNumber']" type="number"></ion-input>
+  <ion-input [formControl]="credentialsForm.controls['phoneNumber']" value=213 type="number"></ion-input>
 </ion-item>     
   
 
       <ion-item>
           <ion-label floating>Ecole</ion-label>
-          <ion-input [formControl]="credentialsForm.controls['school']"
+          <ion-input [formControl]="credentialsForm.controls['school']"value="test"
               type="text"></ion-input>
         </ion-item>     
       <ion-row>

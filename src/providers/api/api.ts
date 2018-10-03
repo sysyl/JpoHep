@@ -21,4 +21,14 @@ export class ApiProvider {
       return this.http.get(`${urlApi}`);
   }
 
+  createAccount(email,password,phoneNumber,school,firstName,lastName):Observable<any>{
+    var urlApi = this.baseUrl+'/createAccount?email='+email+'&password='+password+'&phoneNumber='+phoneNumber+'&school='+school+'&firstName='+firstName+'&lastName='+lastName
+    console.log(urlApi)
+        
+
+    return this.http.get(`${urlApi}`);
+
+
+  }
+
 }
