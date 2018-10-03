@@ -9,4 +9,28 @@
 
 <ion-content padding>
 
+
+    <form [formGroup]="credentialsForm">
+
+        <ion-item>
+          <ion-label >Date</ion-label>
+          <ion-input required [formControl]="credentialsForm.controls['date']"
+              type="date"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label >Heure</ion-label>
+            <ion-input required [formControl]="credentialsForm.controls['time']"
+                type="time"></ion-input>
+          </ion-item>
+        
+          <button ion-button type="submit" (click)="setBooking()" block>Réserver</button>
+
+      </form>
+
+
+
+
+
+
 </ion-content>

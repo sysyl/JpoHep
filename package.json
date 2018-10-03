@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/barcode-scanner": "^4.15.0",
     "@ionic-native/core": "~4.12.0",
-    "@ionic-native/qr-scanner": "^4.15.0",
+    "@ionic-native/date-picker": "^4.15.0",
     "@ionic-native/splash-screen": "~4.12.0",
     "@ionic-native/sqlite": "^4.15.0",
     "@ionic-native/status-bar": "~4.12.0",
@@ -31,17 +31,19 @@
     "cordova-android": "7.1.1",
     "cordova-ios": "4.5.5",
     "cordova-plugin-add-swift-support": "^1.7.2",
+    "cordova-plugin-calendar": "^5.1.2",
+    "cordova-plugin-datepicker": "^0.9.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "cordova-plugin-ionic-webview": "^2.1.4",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
-    "cordova-plugin-vibration": "3.1.0",
+    "cordova-plugin-vibration": "^3.1.0",
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-sqlite-storage": "2.4.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
-    "phonegap-plugin-barcodescanner": "8.0.0",
+    "phonegap-plugin-barcodescanner": "^8.0.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -59,15 +61,21 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-calendar": {},
+      "cordova-plugin-datepicker": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
       "cordova-plugin-vibration": {},
       "cordova-sqlite-storage": {}
     },
-    "platforms": [
-      "ios",
-      "android"
-    ]
-  }
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+"
+    },
+    "cordova-plugin-vibration": {}
+  },
+  "platforms": [
+    "ios",
+    "android"
+  ]
 }

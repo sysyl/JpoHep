@@ -1,3 +1,5 @@
+import { Vibration } from '@ionic-native/vibration';
+import { HttpClient } from '@angular/common/http';
 import { BookingPage } from './../pages/booking/booking';
 import { CreateAccountPage } from './../pages/create-account/create-account';
 import { LoginPage } from './../pages/login/login';
@@ -10,7 +12,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QrCodePage } from '../pages/qr-code/qr-code';
-import { Vibration } from '@ionic-native/vibration';
+import { ApiProvider } from '../providers/api/api';
+import { PopoverPage } from '../pages/popover/popover';
+import { HttpClientModule } from '@angular/common/http';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { SQLite } from '@ionic-native/sqlite';
@@ -24,10 +29,14 @@ import { SQLite } from '@ionic-native/sqlite';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
+    PopoverPage,
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,14 +47,23 @@ import { SQLite } from '@ionic-native/sqlite';
     CreateAccountPage,
     BookingPage,
     QrCodePage,
+    PopoverPage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+<<<<<<< HEAD
     BarcodeScanner,
     Vibration,
     SQLite
+=======
+    ApiProvider,
+    SQLite,
+    BarcodeScanner,
+    Vibration
+>>>>>>> 7aab2b1296bda554b676a8bb34e33f01f77312e2
   ]
 })
 export class AppModule {}
