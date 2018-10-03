@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\app",
     "\\src\\pages",
     "\\src\\pages\\qr-code"
   ],
-  "SelectedNode": "\\src\\pages\\list",
+  "SelectedNode": "\\src\\pages\\qr-code\\qr-code.ts",
   "PreviewInSolutionExplorer": false
 }
