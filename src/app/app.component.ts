@@ -25,7 +25,7 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: HomePage },
       { title: 'Scanner un code', component: QrCodePage },
-      {title:'Réserver',component : BookingPage}
+      { title:'Réserver',component : BookingPage}
     ];
   }
 
