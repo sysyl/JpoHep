@@ -1,0 +1,23 @@
+
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Mes réservations</ion-title>
+  
+  
+  
+    </ion-navbar>
+  
+  </ion-header>
+
+<ion-content padding>
+
+    <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let booking of bookings">
+                
+        <p >{{booking.dateTime}}</p> 
+
+
+      </ion-col>
+</ion-content>

@@ -31,5 +31,12 @@ export class ApiProvider {
     var urlApi = this.baseUrl+'/rooms/'+roomId;
     return this.http.get(`${urlApi}`);
   }
-
-}
+  getBookingByid(userId):Observable<any>{
+    var urlApi = this.baseUrl+'/bookings/user/'+userId;
+    return this.http.get(`${urlApi}`);
+  }
+  setBookingById(user_id,date,hour):Observable<any>{
+    var urlApi = this.baseUrl+'/bookings/add/'+date+"/"+hour+"/"+user_id;
+    return this.http.get(`${urlApi}`);
+  }
+} 

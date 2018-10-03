@@ -53,7 +53,10 @@ export class LoginPage {
           }
           else{
             if(data['error']=='SUCCESS'){
-              this.navCtrl.setRoot(HomePage)            }
+              localStorage.setItem("user_id", data.data.id);
+
+              this.navCtrl.setRoot(HomePage)
+            }
           }
         }
  

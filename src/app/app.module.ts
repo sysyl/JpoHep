@@ -1,3 +1,4 @@
+import { DisplayBookingPage } from './../pages/display-booking/display-booking';
 import { RoomPage } from './../pages/room/room';
 import { HTTP } from '@ionic-native/http';
 import { Vibration } from '@ionic-native/vibration';
@@ -31,7 +32,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-    RoomPage
+    RoomPage,
+    DisplayBookingPage
     
   ],
   imports: [
@@ -50,7 +52,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-    RoomPage
+    RoomPage,
+    DisplayBookingPage
 
   ],
   providers: [
