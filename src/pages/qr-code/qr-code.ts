@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
-import { Vibration } from '@ionic-native/vibration';
+import { HTTP } from '@ionic-native/http';
 
 /**
  * Generated class for the QrCodePage page.
@@ -11,8 +10,6 @@ import { Vibration } from '@ionic-native/vibration';
  * Ionic pages and navigation.
  */
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-qr-code',
@@ -20,23 +17,34 @@ import { Vibration } from '@ionic-native/vibration';
 })
 export class QrCodePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private barcodeScanner: BarcodeScanner,private vibration: Vibration) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner,
+              private http: HTTP) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Qr  CodePage');
   }
-    qrData = null;
-    scannedCode = null;
 
-    scanCode() {
-      this.barcodeScanner.scan().then(barcodeData => {
-        this.scannedCode = barcodeData.text;
-        this.vibration.vibrate([1000,200,1000]);
-      }, (err) => {
-          console.log('Error: ', err);
+
+  qrData = null;
+  scannedCode = null;
+  // Le code est scanné, nous avons donc un id du crCode, le but est de retourner les infos recherchés
+  scanCode() {
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.scannedCode = barcodeData.text
+
+      this.http.get('http://localhost:3000/rooms/'+this.scannedCode, {}, {})
+        .then(data => {
+          console.log(data.data); // data received by server
+        })
+        .catch(error => {
+          console.log(error.error); // error message as string
+        });
+
+    }, (err) => {
+      console.log('Error: ', err);
       });
-    }
+
+  }
+
 
 }

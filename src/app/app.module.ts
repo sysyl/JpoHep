@@ -1,3 +1,4 @@
+import { HTTP } from '@ionic-native/http';
 import { Vibration } from '@ionic-native/vibration';
 import { HttpClient } from '@angular/common/http';
 import { BookingPage } from './../pages/booking/booking';
@@ -55,7 +56,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     ApiProvider,
 
     BarcodeScanner,
-    Vibration
+    Vibration,
+    HTTP
   ]
 })
 export class AppModule {}
