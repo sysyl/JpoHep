@@ -25,7 +25,7 @@ export class LoginPage {
       this.credentialsForm = this.formBuilder.group({
         email: [''],
         password: [''],
-      
+
       });
   }
 
@@ -43,7 +43,7 @@ export class LoginPage {
   onSignIn() {
     console.log(this.credentialsForm.controls['email'].value)
       this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password'].value).subscribe(data => {
-        console.log(data)
+        // console.log(data)
         if(data['error']=='ERROR_EMAIL'){
           this.setAlert('Attention','Email incorrect.')
         }
@@ -53,13 +53,16 @@ export class LoginPage {
           }
           else{
             if(data['error']=='SUCCESS'){
-              this.navCtrl.setRoot(HomePage)            }
+              localStorage.setItem("user_id", data.data.id);
+              this.navCtrl.setRoot(HomePage)
+
+             }
           }
         }
- 
+
       });
-    
-    
+
+
   }
 
   onCreateAccount() {

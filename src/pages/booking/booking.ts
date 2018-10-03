@@ -33,18 +33,16 @@ export class BookingPage {
 
     console.log(date)
     console.log(hour)
+
+    var user_id = localStorage.getItem('user_id')
+
     var data = {
           "date": date,
           "hour": hour
         };
 
       var header = { headers: {"Content-Type": "application/json"} };
-
-<<<<<<< HEAD
-      this.http.get('http://localhost:3000/bookings/add/'+date+"/"+hour, {}, {}).then(data => {
-=======
-      this.http.get('http://home.paulsouille.fr:3000/bookings/add/'+date+"/"+hour, {}, {}).then(data => {
->>>>>>> 5ba8fc7b37ea43c1dc3108bf07608bab4a7e76b8
+      this.http.get('http://home.paulsouille.fr:3000/bookings/add/'+date+"/"+hour+"/"+user_id, {}, {}).then(data => {
         console.log(data.status);
       }).catch(error => {
         console.log(error.status);
