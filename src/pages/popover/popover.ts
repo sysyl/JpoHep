@@ -14,8 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'popover.html',
 })
 export class PopoverPage {
-
+  roomPath:String;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.data)
+    this.roomPath = this.navParams.data['roomPath'];
+
   }
 
   ionViewDidLoad() {

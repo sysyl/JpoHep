@@ -34,18 +34,16 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 
-$text-color: white;
-
 $colors: (
   primary:    #488aff,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  secondary:  #592b7e,
-  third:      #ab1f78,
-  button:     #b757c4,
+  secondary:  #043a58,
+  third:      #1383ba,
+  button:     #043a58,
 );
-
+$text-color:white;
 $app-background: linear-gradient(to bottom, color($colors, secondary) 0%, color($colors, third) 100%);
 $background-color: transparent;
 $toolbar-background: transparent;

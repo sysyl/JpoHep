@@ -2,7 +2,7 @@ import { ApiProvider } from './../../providers/api/api';
 import { HomePage } from './../home/home';
 import { CreateAccountPage } from './../create-account/create-account';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
 /**
  * Generated class for the LoginPage page.
@@ -20,7 +20,7 @@ export class LoginPage {
   credentialsForm: FormGroup;
   account : Account;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl:AlertController,private formBuilder: FormBuilder,private apiProvider: ApiProvider
+  constructor(public navCtrl: NavController,private events:Events, public navParams: NavParams,private alertCtrl:AlertController,private formBuilder: FormBuilder,private apiProvider: ApiProvider
     ) {
       this.credentialsForm = this.formBuilder.group({
         email: [''],
@@ -54,9 +54,10 @@ export class LoginPage {
           else{
             if(data['error']=='SUCCESS'){
               localStorage.setItem("user_id", data.data.id);
-              this.navCtrl.setRoot(HomePage)
-
-             }
+              localStorage.setItem('role_id',data.data.role_id);
+              this.events.publish('user:changed', localStorage.getItem('role_id'));
+              this.navCtrl.setRoot(HomePage);
+            }
           }
         }
 
