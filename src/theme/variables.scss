@@ -33,6 +33,9 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+
+$text-color: white;
+
 $colors: (
   primary:    #488aff,
   danger:     #f53d3d,
@@ -42,6 +45,7 @@ $colors: (
   third:      #ab1f78,
   button:     #b757c4,
 );
+
 $app-background: linear-gradient(to bottom, color($colors, secondary) 0%, color($colors, third) 100%);
 $background-color: transparent;
 $toolbar-background: transparent;
