@@ -42,27 +42,27 @@ export class LoginPage {
   }
   onSignIn() {
 
-    this.navCtrl.setRoot(HomePage);
-    //console.log(this.credentialsForm.controls['email'].value)
-    //  this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password'].value).subscribe(data => {
-    //    console.log(data)
-    //    if(data['error']=='ERROR_EMAIL'){
-    //      this.setAlert('Attention','Email incorrect.')
-    //    }
-    //    else{
-    //      if(data['error']=='ERROR_PASSWORD'){
-    //        this.setAlert('Attention','Mot de passe incorrect')
-    //      }
-    //      else{
-    //        if(data['error']=='SUCCESS'){
-    //          localStorage.setItem("user_id", data.data.id);
+    //this.navCtrl.setRoot(HomePage);
+    console.log(this.credentialsForm.controls['email'].value)
+      this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password'].value).subscribe(data => {
+        console.log(data)
+        if(data['error']=='ERROR_EMAIL'){
+          this.setAlert('Attention','Email incorrect.')
+        }
+        else{
+          if(data['error']=='ERROR_PASSWORD'){
+            this.setAlert('Attention','Mot de passe incorrect')
+          }
+          else{
+            if(data['error']=='SUCCESS'){
+              localStorage.setItem("user_id", data.data.id);
 
-    //          this.navCtrl.setRoot(HomePage)
-    //        }
-    //      }
-    //    }
+              this.navCtrl.setRoot(HomePage)
+            }
+          }
+        }
         
-      //});
+      });
     
     
   }
