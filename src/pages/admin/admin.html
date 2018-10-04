@@ -12,14 +12,14 @@
 <ion-content padding>
 
     <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let booking of bookingsUser">
-      <ion-item>
+      <ion-item class="square">
         <p >{{booking.userFirstName}}</p>
-        <p >{{booking.userLastName}}</p> 
-        <p >{{booking.dateTime}}</p> 
-        <button ion-button clear color="light" (click)="onValidateBooking(booking.id)">
+        <p >{{booking.userLastName}}</p>
+        <p >{{booking.dateTime | date:'dd/mm/yyyy à HH:mm'}}</p>
+        <button ion-button clear color="light" class="btnValidate" (click)="onValidateBooking(booking.id)">
             Valider
           </button>
-          <button ion-button clear color="light" (click)="onDeleteBooking(booking.id)">
+          <button ion-button clear color="light" class="btnRefuse" (click)="onDeleteBooking(booking.id)">
               Supprimer
             </button>
       </ion-item>
