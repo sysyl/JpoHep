@@ -14,7 +14,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { QrCodePage } from '../pages/qr-code/qr-code';
 import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
-import { ContactPage } from '../pages/contact/contact';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -29,14 +28,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-    ContactPage
-
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +46,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-    ContactPage
 
   ],
   providers: [
