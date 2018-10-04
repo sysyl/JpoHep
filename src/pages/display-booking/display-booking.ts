@@ -18,6 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DisplayBookingPage {
   user_id:any;
   bookings = new Array<Booking>();
+  ifData:boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private apiProvider:ApiProvider) {
   }
@@ -29,6 +30,12 @@ export class DisplayBookingPage {
     this.apiProvider.getBookingByid(this.user_id).subscribe(data => {
       console.log(data)
       this.bookings = data['data'];
+
+      if(this.bookings.length!=0){
+        this.ifData = true;
+      }
+
+
       this.bookings.map((oneBooking,i)=>{
         oneBooking.dateTime =new Date(oneBooking.dateTime).getDay().toString()+'/'+new Date(oneBooking.dateTime).getMonth().toString()+'/'+
         new Date(oneBooking.dateTime).getFullYear().toString()+' '+

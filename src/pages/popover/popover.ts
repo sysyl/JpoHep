@@ -18,7 +18,6 @@ export class PopoverPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     console.log(this.navParams.data)
     this.roomPath = this.navParams.data['roomPath'];
-
   }
 
   ionViewDidLoad() {

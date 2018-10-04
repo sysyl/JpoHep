@@ -18,6 +18,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class AdminPage {
   bookingsUser = new Array<BookingUser>();
+  ifData:boolean = false;
   constructor(public navCtrl: NavController,private alertCtrl : AlertController,private apiProvider : ApiProvider, public navParams: NavParams) {
   }
 
@@ -45,22 +46,24 @@ export class AdminPage {
       });
       alert.present();
     }
-
+ 
   ionViewDidLoad() {
     this.apiProvider.getAllBookings().subscribe(data => {
+
+
+
       this.bookingsUser = data['data'];
-      console.log(this.bookingsUser);
+
+      if(this.bookingsUser.length!=0){
+        this.ifData = true;
+      }
+
       this.bookingsUser.map((oneBooking,i)=>{
         oneBooking.dateTime =new Date(oneBooking.dateTime).getDay().toString()+'/'+new Date(oneBooking.dateTime).getMonth().toString()+'/'+
         new Date(oneBooking.dateTime).getFullYear().toString()+' '+
         new Date(oneBooking.dateTime).getHours().toString()+':'+
         new Date(oneBooking.dateTime).getMinutes().toString()
       })
-      
-
-    });  }
-
-
-
-
+    });
+    }
 }
