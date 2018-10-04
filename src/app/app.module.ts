@@ -1,3 +1,6 @@
+import { DisplayBookingPage } from './../pages/display-booking/display-booking';
+import { RoomPage } from './../pages/room/room';
+import { HTTP } from '@ionic-native/http';
 import { Vibration } from '@ionic-native/vibration';
 import { HttpClient } from '@angular/common/http';
 import { BookingPage } from './../pages/booking/booking';
@@ -15,10 +18,9 @@ import { QrCodePage } from '../pages/qr-code/qr-code';
 import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
 import { HttpClientModule } from '@angular/common/http';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { HTTP } from '@ionic-native/http';
-
+import {AlertController} from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
-
+    RoomPage,
+    DisplayBookingPage
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
-
+    HttpClientModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,6 +52,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BookingPage,
     QrCodePage,
     PopoverPage,
+    RoomPage,
+    DisplayBookingPage
 
   ],
   providers: [
@@ -55,10 +61,10 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    SQLite,
+
     BarcodeScanner,
     Vibration,
-    HTTP,
+    HTTP
   ]
 })
 export class AppModule {}
