@@ -42,6 +42,7 @@ $colors: (
   third:      #1383ba,
   button:     #043a58,
 );
+$text-color:white;
 $app-background: linear-gradient(to bottom, color($colors, secondary) 0%, color($colors, third) 100%);
 $background-color: transparent;
 $toolbar-background: transparent;

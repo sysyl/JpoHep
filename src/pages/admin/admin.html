@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Interface d'administration</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content padding>
+
+    <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let booking of bookingsUser">
+      <ion-item>
+        <p >{{booking.userFirstName}}</p>
+        <p >{{booking.userLastName}}</p> 
+        <p >{{booking.dateTime}}</p> 
+        <button ion-button clear color="light" (click)="onValidateBooking(booking.id)">
+            Valider
+          </button>
+          <button ion-button clear color="light" (click)="onDeleteBooking(booking.id)">
+              Supprimer
+            </button>
+      </ion-item>
+
+      </ion-col>
+</ion-content>

@@ -39,4 +39,18 @@ export class ApiProvider {
     var urlApi = this.baseUrl+'/bookings/add/'+date+"/"+hour+"/"+user_id;
     return this.http.get(`${urlApi}`);
   }
+  getAllBookings():Observable<any>{
+    var urlApi = this.baseUrl+'/bookings';
+    return this.http.get(`${urlApi}`);
+  }
+  deleteBookingById(bookingId):Observable<any>{
+    var urlApi = this.baseUrl+'/bookings/refuse/'+bookingId;
+    return this.http.get(`${urlApi}`);
+
+  }
+
+  validateBookingById(bookingId):Observable<any>{
+    var urlApi = this.baseUrl+'/bookings/validate/'+bookingId;
+    return this.http.get(`${urlApi}`);
+  }
 } 

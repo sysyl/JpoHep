@@ -1,3 +1,4 @@
+import { AdminPage } from './../pages/admin/admin';
 import { DisplayBookingPage } from './../pages/display-booking/display-booking';
 import { RoomPage } from './../pages/room/room';
 import { HTTP } from '@ionic-native/http';
@@ -18,7 +19,6 @@ import { QrCodePage } from '../pages/qr-code/qr-code';
 import { ApiProvider } from '../providers/api/api';
 import { PopoverPage } from '../pages/popover/popover';
 import { HttpClientModule } from '@angular/common/http';
-import {AlertController} from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
@@ -33,7 +33,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     QrCodePage,
     PopoverPage,
     RoomPage,
-    DisplayBookingPage
+    DisplayBookingPage,
+    AdminPage
     
   ],
   imports: [
@@ -53,7 +54,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     QrCodePage,
     PopoverPage,
     RoomPage,
-    DisplayBookingPage
+    DisplayBookingPage,
+    AdminPage
 
   ],
   providers: [
