@@ -39,7 +39,6 @@ export class ApiProvider {
     var urlApi = this.baseUrl+'/bookings/add/'+date+"/"+hour+"/"+user_id;
     return this.http.get(`${urlApi}`);
   }
-<<<<<<< HEAD
   getAllBookings():Observable<any>{
     var urlApi = this.baseUrl+'/bookings';
     return this.http.get(`${urlApi}`);
@@ -54,6 +53,4 @@ export class ApiProvider {
     var urlApi = this.baseUrl+'/bookings/validate/'+bookingId;
     return this.http.get(`${urlApi}`);
   }
-=======
->>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
 } 

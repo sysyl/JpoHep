@@ -35,13 +35,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     RoomPage,
     DisplayBookingPage,
     AdminPage
-
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule
-
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

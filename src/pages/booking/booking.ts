@@ -26,18 +26,9 @@ export class BookingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BookingPage');
 
+
   }
 
-  setAlert(titleAlert,contentAlert){
-    let alert = this.alertCtrl.create({
-      title: titleAlert,
-      subTitle: contentAlert,
-      buttons: ['Fermer']
-    });
-    alert.present();
-  }
-
-<<<<<<< HEAD
   setAlert(titleAlert,contentAlert){
     let alert = this.alertCtrl.create({
       title: titleAlert,
@@ -52,6 +43,10 @@ export class BookingPage {
     var date = this.credentialsForm.controls['date'].value
     var hour = this.credentialsForm.controls['time'].value
 
+
+
+    var user_id = localStorage.getItem('user_id')
+    
     this.apiProvider.setBookingById(user_id,date,hour).subscribe(data => {
       console.log(data)
       console.log(data['error'])
@@ -61,7 +56,7 @@ export class BookingPage {
       else{
         this.setAlert('Attention','Un problème est survenu.')
       }
-
+      
     });
 
 

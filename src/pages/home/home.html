@@ -4,31 +4,22 @@
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title>Bienvenue au Campus HEP</ion-title>
-
-
-
     </ion-navbar>
 
   </ion-header>
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 865a73385802617fa43506d5af68cc76bbcdc2f8
 <ion-content padding>
 
-  <img src="assets/imgs/logohep.png" style="align-items: center" class="slide" />
+  <img src="assets/imgs/logohep.png" style="align-items: center;display:none" class="slide" />
 
   <p></p>
 
-  <img src="assets/imgs/batiment.png" />
+
+    <video status="pause" id="homeVideo" (click)="playVideo()" preload="auto"  class="video bg-vidAeroplane" style="width:100%;height:auto;opacity: 1.0 !important" playsinline poster="assets/imgs/poster.png">
+  			<source src="assets/video/presentation.mp4" type='video/mp4'>
+  		</video>
 
   <p></p><p></p><p></p>
 
   <img src="assets/imgs/ecoles.png" />
-
-<<<<<<< HEAD
 </ion-content>
-=======
-</ion-content>
->>>>>>> 865a73385802617fa43506d5af68cc76bbcdc2f8

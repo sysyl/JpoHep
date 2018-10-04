@@ -9,7 +9,6 @@ import { LoginPage } from './../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { DisplayBookingPage } from '../pages/display-booking/display-booking';
 
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -32,7 +31,7 @@ export class MyApp {
 
 
       this.events.subscribe('user:changed', user_id => {
-        this.user_id = user_id;
+        this.user_id = user_id; 
         if(this.user_id == "0"){
           this.pages = [
             { title: 'Accueil', component: HomePage },

@@ -18,9 +18,9 @@
 
     <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let booking of bookingsUser">
       <ion-item class="square">
-        <p >{{booking.userFirstName}}</p>
-        <p >{{booking.userLastName}}</p>
+        <p >{{booking.firstname}}</p>
 
+        <p >{{booking.lastname}}</p>
         <p >{{booking.dateTime | date:'dd/mm/yyyy à HH:mm'}}</p>
         <button ion-button clear color="light" class="btnValidate" (click)="onValidateBooking(booking.id)">
             Valider
