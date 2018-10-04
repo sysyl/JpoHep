@@ -5,22 +5,35 @@
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title>Mes réservations</ion-title>
+<<<<<<< HEAD
 
 
 
     </ion-navbar>
 
+=======
+  
+  
+  
+    </ion-navbar>
+  
+>>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
   </ion-header>
 
 <ion-content padding>
 
     <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let booking of bookings">
+<<<<<<< HEAD
       <ion-item class="square">
         <p class="white">{{booking.dateTime}}</p>
         <p *ngIf="booking.state == 0" class="yellow">En attente de validation</p>
         <p *ngIf="booking.state == 1" class="green">Validée.</p>
         <p *ngIf="booking.state == 2" class="red">Refusée</p>
 
+=======
+      <ion-item>
+        <p >{{booking.dateTime}}</p> 
+>>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
       </ion-item>
 
       </ion-col>

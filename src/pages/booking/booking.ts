@@ -25,6 +25,10 @@ export class BookingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BookingPage');
+<<<<<<< HEAD
+
+=======
+>>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
 
 
   }
@@ -38,6 +42,18 @@ export class BookingPage {
     alert.present();
   }
 
+<<<<<<< HEAD
+  setAlert(titleAlert,contentAlert){
+    let alert = this.alertCtrl.create({
+      title: titleAlert,
+      subTitle: contentAlert,
+      buttons: ['Fermer']
+    });
+    alert.present();
+  }
+
+=======
+>>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
 
   setBooking(){
     var date = this.credentialsForm.controls['date'].value
@@ -47,7 +63,11 @@ export class BookingPage {
     console.log(hour)
 
     var user_id = localStorage.getItem('user_id')
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d0fd627ecd2d47ce50d54d633e1ef168adfb1adc
     this.apiProvider.setBookingById(user_id,date,hour).subscribe(data => {
       console.log(data)
       console.log(data['error'])

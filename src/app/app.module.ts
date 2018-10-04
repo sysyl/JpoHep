@@ -63,6 +63,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
+
     BarcodeScanner,
     Vibration,
     HTTP
