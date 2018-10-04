@@ -26,7 +26,7 @@ export class MyApp {
         { title: 'Accueil', component: HomePage },
         { title: 'Scanner un code', component: QrCodePage },
         { title:'Réserver',component : BookingPage},
-        {title:"Ma réservation",component:DisplayBookingPage}
+        {title:"Mes réservations",component:DisplayBookingPage}
       ];
 
 
@@ -37,7 +37,7 @@ export class MyApp {
             { title: 'Accueil', component: HomePage },
             { title: 'Scanner un code', component: QrCodePage },
             { title:'Réserver',component : BookingPage},
-            {title:"Mes réservation",component:DisplayBookingPage}
+            {title:"Mes réservations",component:DisplayBookingPage}
           ];
         }
         else{
@@ -45,8 +45,8 @@ export class MyApp {
             { title: 'Accueil', component: HomePage },
             { title: 'Scanner un code', component: QrCodePage },
             { title:'Réserver',component : BookingPage},
-            {title:"Mes réservation",component:DisplayBookingPage},
-            {title:"Admin",component:AdminPage}
+            {title:"Mes réservations",component:DisplayBookingPage},
+            {title:"Administration",component:AdminPage}
           ];
         }
 

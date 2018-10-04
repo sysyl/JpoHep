@@ -43,8 +43,7 @@ export class BookingPage {
     var date = this.credentialsForm.controls['date'].value
     var hour = this.credentialsForm.controls['time'].value
 
-    console.log(date)
-    console.log(hour)
+
 
     var user_id = localStorage.getItem('user_id')
     
